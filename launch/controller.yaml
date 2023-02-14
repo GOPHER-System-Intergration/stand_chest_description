@@ -1,0 +1,12 @@
+stand_chest:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Zaxis_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Zaxis
+    # PID was tuning used the dynamic tuner
+    pid: {p: 10000.0, i: 0.00, d: 0.0}

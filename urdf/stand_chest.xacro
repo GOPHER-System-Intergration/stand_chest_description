@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<robot name="stand_chest" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find stand_chest_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.trans" />
+<xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.gazebo" />
+
+
+<link name="base_link"></link>
+
+<joint name="base_link_to_stand" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="stand"/>
+</joint>
+
+<joint name="Zaxis" type="prismatic">
+  <origin xyz="-0.082038 0.000502 0.303534" rpy="0 0 0"/>
+  <parent link="stand"/>
+  <child link="chest_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit upper="0.47" lower="0.00" effort="1000000" velocity="100000"/>
+</joint>
+
+<link name="stand">
+  <inertial>
+    <origin xyz="-0.037004070310384385 -0.00020044152592137615 0.5753345004257665" rpy="0 0 0"/>
+    <mass value="33.868854678471465"/>
+    <inertia ixx="6.060039" iyy="5.972007" izz="0.308603" ixy="-0.001526" iyz="0.007953" ixz="0.121063"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://stand_chest_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://stand_chest_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="chest_1">
+  <inertial>
+    <origin xyz="0.10867723103887933 -2.454320478433963e-05 0.21808816300602257" rpy="0 0 0"/>
+    <mass value="17.059360311650657"/>
+    <inertia ixx="0.33354" iyy="0.300823" izz="0.167767" ixy="-2.1e-05" iyz="-0.010615" ixz="0.035724"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082038 -0.000502 -0.303534" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://stand_chest_description/meshes/chest_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082038 -0.000502 -0.303534" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://stand_chest_description/meshes/chest_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>

@@ -1,0 +1,21 @@
+<launch>
+
+<rosparam file="$(find stand_chest_description)/launch/controller.yaml" command="load"/>
+
+<!-- Spawns all the controllers for each joint - based on the the transimisitons file and the xml files-->
+<!-- Each controller does have a pid attached to it -->
+<node name="controller_spawner" 
+      pkg="controller_manager" 
+      type="spawner" 
+      respawn="false" 
+      output="screen" 
+      ns="stand_chest" 
+      args="Zaxis_position_controller joint_state_controller ">
+</node>
+
+<!-- runs the node that provide robot joint position, effort and velocity values -->
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+  <remap from="/joint_states" to="/stand_chest/joint_states"/>
+</node>
+
+</launch>

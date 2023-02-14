@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot name="stand_chest" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<!-- This transmissions are set to work on the simulated robot. The real robot already as a controller -->
+<transmission name="Zaxis_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Zaxis">
+    <!-- <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> -->
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Zaxis_actr">
+    <!-- <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface> -->
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
