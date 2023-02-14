@@ -4,9 +4,7 @@
 <xacro:include filename="$(find stand_chest_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.trans" />
 <xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.gazebo" />
-
-<xacro:include filename="$(find stand_chest_description)/urdf/freight.gazebo" />
-<xacro:include filename="$(find stand_chest_description)/urdf/freight.xacro" />
+<xacro:include filename="$(find fetch_gazebo)/robots/freight.gazebo.xacro" />
 
 <!-- <link name="base_link"></link> -->
 
