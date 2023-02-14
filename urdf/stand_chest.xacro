@@ -4,22 +4,6 @@
 <xacro:include filename="$(find stand_chest_description)/urdf/materials.xacro" />
 <xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.trans" />
 <xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.gazebo" />
-<xacro:include filename="$(find fetch_gazebo)/robots/freight.gazebo.xacro" />
-
-<!-- <link name="base_link"></link> -->
-
-<joint name="base_link_to_stand" type="fixed">
-  <origin xyz="-0.1 0.0 0.357425" rpy="0 0 0"/>
-  <parent link="base_link"/>
-  <child link="stand"/>
-</joint>
-
-<!-- <joint name="torso_fixed_joint" type="fixed">
-    <origin rpy="-6.12303176911189E-17 0 0" xyz="-0.086875 0 0.377425" />
-    <parent link="base_link" />
-    <child link="torso_fixed_link" />
-    <axis xyz="0 1 0" />
-</joint> -->
 
 <joint name="Zaxis" type="prismatic">
   <origin xyz="-0.082038 0.000502 0.303534" rpy="0 0 0"/>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<robot name="gopher" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.xacro" />
+
+<!-- Include the mobile base -->
+<xacro:include filename="$(find fetch_gazebo)/robots/freight.gazebo.xacro" />
+
+<joint name="base_link_to_stand" type="fixed">
+  <origin xyz="-0.1 0.0 0.357425" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="stand"/>
+</joint>
+
+<!-- TODO
+- Add Arms -->
+
+<!-- <link name="left_arm"/>
+<joint name="chest_to_left_arm" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="chest"/>
+  <child link="left_arm"/>
+</joint>
+<link name="right_arm"/>
+<joint name="chest_to_right_arm" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="chest"/>
+  <child link="right_arm"/>
+</joint> -->
+
+</robot>

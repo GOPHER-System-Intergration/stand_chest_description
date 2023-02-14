@@ -1,8 +1,19 @@
 <launch>
   <!-- launches the robot into gazebo sim -->
   <!-- This does not launch the joint controllers -->
-  <param name="robot_description" command="$(find xacro)/xacro $(find stand_chest_description)/urdf/stand_chest.xacro"/>
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model stand_chest"/>
+
+  <arg name="include_base" default="true"/>
+
+  <group if="$(arg include_base)">
+    <param name="robot_description" command="$(find xacro)/xacro $(find stand_chest_description)/urdf/gopher.xacro"/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model gopher"/>
+  </group>
+
+  <group unless="$(arg include_base)">
+    <param name="robot_description" command="$(find xacro)/xacro $(find stand_chest_description)/urdf/stand_chest_standalone.xacro"/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model stand_chest"/>
+  </group>
+  
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!-- <arg name="paused" value="true"/> -->
     <arg name="use_sim_time" value="true"/>

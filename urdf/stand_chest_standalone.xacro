@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="stand_chest" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find stand_chest_description)/urdf/stand_chest.xacro" />
+
+<!-- This gets rid of a warning mentioned in gazebo -->
+<link name="base_link"></link>
+
+<joint name="base_link_to_stand" type="fixed">
+  <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="stand"/>
+</joint>
+
+</robot>
