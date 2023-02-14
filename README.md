@@ -1,8 +1,12 @@
 # Overview
 
-For the develeopment of gopher, it would be advantageous if we were able to simualte the robot in the physics engine gazebo.
+For the develeopment of gopher, it would be advantageous if we were able to simulate the robot in the physics engine gazebo.
 
-This is a package containing a running simulation of the gopher chest_stand component. This code was edited based on the fusion2urdf fusion360 plugin with some minor edits to work for Noetic.
+This is a package containing a running simulation of the gopher chest_stand component. This code was edited based on the fusion2urdf fusion360 plugin with some minor edits to work for **Noetic**.
+
+## Updates
+
+- Connected the stand to the mobile base platform - fetch freight research platform
 
 # TODO
 
@@ -11,12 +15,16 @@ This is a package containing a running simulation of the gopher chest_stand comp
     - how to install the ros package
     - how to test and debug
 
-# Important
+# Launch Files
 
 This package contains 3 different launch files of interest:
 - display.launch
 - gazebo.launch
 - controller.launch
+
+**Dependent ROS Packages**
+- fetch_gazebo
+- fetch_ros
 
 We will go over their purpose right now.
 
