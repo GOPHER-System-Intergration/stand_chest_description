@@ -9,4 +9,4 @@ stand_chest:
     type: effort_controllers/JointPositionController
     joint: Zaxis
     # PID was tuning used the dynamic tuner
-    pid: {p: 10000.0, i: 0.00, d: 100.0}
+    pid: {p: 10000.0, i: 0.00, d: 500.0}
