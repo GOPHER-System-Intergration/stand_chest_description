@@ -10,7 +10,7 @@
   <parent link="stand"/>
   <child link="chest_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="0.47" lower="0.00" effort="1000000" velocity="0.5"/>
+  <limit upper="0.201" lower="0.2" effort="1000000" velocity="0.5"/>
 </joint>
 
 <link name="stand">

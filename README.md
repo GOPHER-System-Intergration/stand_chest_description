@@ -28,7 +28,9 @@ sudo apt-get install ros-(distro)-position-controllers
 Replace (distro) with your ros version. Ex: noetic
 
 Install fetch packages
+
 ```
+cd ~/catkin_ws/src
 git clone -b ros1 git@github.com:ZebraDevs/fetch_ros.git
 git clone -b gazebo11 git@github.com:ZebraDevs/fetch_gazebo.git
 ```
